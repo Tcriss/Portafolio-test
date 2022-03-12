@@ -254,42 +254,42 @@ li {
     width: 100%;
   }
 
-  .saludo{
+    .saludo{
     position: absolute;
     width: 50%;
-    left: 25px;
-    top: 121px;
-    font-size: 24px;
+    left: 14px;
+    top: 145px;
+    font-size: 22px;
     line-height: 28px;
   }
 
   .logo-nombre {
     position: absolute;
     width: 30%;
-    left: 25px;
-    top: 111px;
-    font-weight: 500;
-    font-size: 64px;
-    line-height: 77px;
+    left: 14px;
+    top: 182px;
+    font-weight: 400;
+    font-size: 52px;
+    line-height: 62px;
   }
 
   .descripcion {
     width: 70%;
-    left: 25px;
-    top: 312px;
+    left: 14px;
+    top: 313px;
     font-family: raleway;
     color: white;
     font-style: normal;
     font-weight: normal;
-    font-size: 24px;
-    line-height: 38px;
+    font-size: 22px;
+    line-height: 26px;
   }
 
   .dialogo{
     width: 70%;
     height: 7%;
-    left: 64px;
-    top: 525px;
+    left: 45px;
+    top: 516px;
   }
   
   .dialogo::before{
@@ -300,6 +300,7 @@ li {
     border-left: 20px solid transparent;
     border-right: 20px solid transparent;
   }
+
 
   .logo-cont{
     left: 19px;
