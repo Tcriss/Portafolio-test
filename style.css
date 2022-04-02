@@ -47,6 +47,29 @@ body {
 .main{
   width: 100%;
   height: 100%;
+  display: grid;
+  grid-template-areas: 
+    'profile descripcion';
+}
+
+#descripcion-container {
+  grid-area: descripcion;
+  position: relative;
+  width: 70%;
+  height: 100%;
+  box-sizing: border-box;
+  justify-content: center;
+  align-items: center;
+}
+
+#profile-container {
+  grid-area: profile;
+  position: relative;
+  width: 30%;
+  height: 100%;
+  box-sizing: border-box;
+  justify-content: center;
+  align-items: center;
 }
 
 .cuerpo {
@@ -75,6 +98,38 @@ header{
   width: 70%;
   height: 100%;
   top: 0px;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: #ffffff;
+  width: 94%;
+  height: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px;
+  z-index: 3;
+  transition: display 500ms;
+  transition-timing-function: ease;
+}
+
+#icon-menu {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  right: 30px;
+  top: 16px;
+  background-color: rgb(38, 55, 90);
+  border-radius: 100%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+#menu {
+  width: 24px;
+  height: 24px;
 }
 
 .navbar a { 
@@ -108,24 +163,82 @@ header{
   width: 70px;
 }
 
-ul {
+.navbar ul {
   list-style-type: none;
-  background-color: #13224900;
+  background-color: #ffb50a00;
   overflow: hidden;
 }
 
-li {
-  float: left;
+.navbar li {
+  float: right;
   padding-left: 20px;
   padding-right: 20px;
 }
 
+.dropdown-menu ul{
+  margin-top: 70px;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  display: block;
+  list-style-type: none;
+  background-color: #0048ff00;
+}
+
+.dropdown-menu li {
+  float: center;
+  margin-right: 40px;
+}
+
+.dropdown-menu a {
+  width: 100%;
+  border-radius: 4%;
+  display: block;
+  font-size: 24px;
+  color: #000000;
+  font-family: raleway;
+  text-decoration: none;
+  text-align: center;
+  line-height: 50px;
+}
+
+#dropdown-icon-menu {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  right: 10px;
+  top: 16px;
+  background-color: rgba(38, 55, 90, 0.252);
+  border-radius: 100%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.white-logo-cont {
+  top: -47px;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+}
+
+.white-logo {
+  color: #000000;
+  font-family: Bungee-Shade;
+  font-size: 55px;
+}
+
 /*-------------------------------------textos-------------------------------------*/
+
+.saludo, .logo-nombre, .descripcion {
+  left: -150px;
+}
 
 .saludo {
   position: absolute;
-  width: 20%;
-  left: 575px;
+  width: 100%;
+  max-width: 500px;
   top: 170px;
   color: rgb(255, 255, 255);
   font-family: raleway;
@@ -138,7 +251,6 @@ li {
 .logo-nombre {
   position: absolute;
   width: 30%;
-  left: 575px;
   top: 166px;
   color:#FFFFFF;
   font-family: Bungee-Shade;
@@ -148,24 +260,10 @@ li {
   line-height: 91px;
 }
 
-.carrera {
-  color: #0f213d;
-  font-family: pacifico;
-  position: absolute;
-  top: -18px;
-  left: 13;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 34px;
-  line-height: 34px;
-  text-align: center;
-}
-
 .descripcion {
   position: absolute;
-  width: 30%;
-
-  left: 575px;
+  width: 100%;
+  max-width: 500px;
   top: 428px;
   font-family: raleway;
   color: white;
@@ -175,13 +273,26 @@ li {
   line-height: 38px;
 }
 
+#carrera {
+  color: #0f213d;
+  font-family: pacifico;
+  position: absolute;
+  top: -10px;
+  left: 13;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 27px;
+  line-height: 34px;
+  text-align: center;
+}
+
 .dialogo{
   background-color: rgb(255, 255, 255);
   position: absolute;
-  width: 40%;
-  height: 9%;
+  width: 320px;
+  height: 70px;
+  left: 15px;
   box-sizing: border-box;
-  left: 110px;
   max-width: 400px;
   top: 560px;
   border-radius: 20px;
@@ -192,7 +303,7 @@ li {
   display: block;
   position: absolute;
   top: -40px;
-  left:178px;
+  left:145px;
   border-top: 20px solid transparent;
   border-bottom: 20px solid rgb(255, 255, 255);
   border-left: 20px solid transparent;
@@ -203,15 +314,15 @@ li {
 
 .imagen {
   position: absolute;
-  width: 50%;
-  height: 50%;
-  left: 940px;
-  top: 310px;
+  width: 420px;
+  height: 300px;
+  left: 70%;
+  top: 400px;
+  z-index: -1;
 }
 
 .profile_photo{
   position: absolute;
-  left: 130px;
   top: 130px;
 }
 
@@ -219,7 +330,7 @@ li {
   position: absolute;
   width: 44px;
   height: 44px;
-  left: 218px;
+  left: 88px;
   top: 640px;
 }
 
@@ -227,7 +338,7 @@ li {
   position: absolute;
   width: 44px;
   height: 44px;
-  left: 288px;
+  left: 158px;
   top: 640px;
 }
 
@@ -235,112 +346,212 @@ li {
   position: absolute;
   width: 44px;
   height: 44px;
-  left: 358px;
+  left: 228px;
   top: 640px;
 }
 
-@media screen and (max-width: 1126px) {
-  .dialogo {
-    height: 15%;
-  }
-}
 
-@media screen and (max-width: 527px){
+/*------------------------------------------------------------------------*/
 
+@media screen and (max-width: 1200px) {
 
-
-  .cuerpo{
-    background-color: #0f213d;
-    width: 100%;
+  .imagen {
+    display: none;
   }
 
-    .saludo{
-    position: absolute;
-    width: 50%;
-    left: 14px;
-    top: 145px;
-    font-size: 22px;
-    line-height: 28px;
+  .saludo, .logo-nombre, .descripcion {
+    left: -10px;
+  }
+
+  .saludo,
+  .descripcion {
+    font-size: 38px;
+    width: 140%;
   }
 
   .logo-nombre {
-    position: absolute;
-    width: 30%;
-    left: 14px;
-    top: 182px;
-    font-weight: 400;
-    font-size: 52px;
-    line-height: 62px;
+    font-size: 78px;
+    line-height: 91px;
+    top: 185px;
+  }
+
+}
+
+@media screen and (max-width: 950px) {
+
+  .saludo, .logo-nombre, .descripcion {
+    left: 0px;
   }
 
   .descripcion {
-    width: 70%;
-    left: 14px;
-    top: 313px;
-    font-family: raleway;
-    color: white;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 22px;
-    line-height: 26px;
+    top: 380px;
   }
 
-  .dialogo{
-    width: 70%;
-    height: 7%;
-    left: 45px;
-    top: 516px;
+  .saludo,
+  .descripcion {
+    font-size: 27px;
+    width: 130%;
+  }
+
+  .logo-nombre {
+    font-size: 58px;
+    line-height: 71px;
+  }
+
+@media screen and (max-width: 840px){
+
+  .main{
+    display: grid;
+    grid-template-areas: 
+     'descripcion'
+     'profile';
+  }
+
+  .saludo {
+    top: 120px;
+  }
+
+  .logo-nombre {
+    top: 140px;
+  }
+
+  .descripcion {
+    top: 330px;
+  }
+
+  .profile_photo {
+    top: -90px;
+  }
+
+  .dialogo {
+    top: 310px;
+  }
+
+  .github, .ig, .linkedin {
+    top: 390px;
+  }
+
+  #icon_menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
   }
   
+}
+
+@media screen and (max-width: 530px){
+
+  .show-dropdown-menu {
+    display: flex;
+  }
+
+  .cuerpo {
+    margin: 0 auto;
+  }
+
+  .dropdown-menu {
+    position: absolute;
+    transition-property: display;
+    transition: display 500ms;
+    transition-timing-function: ease;
+  }
+
+  #icon-menu {
+    display: flex;
+  }
+
+  #dropdown-icon-menu {
+    display: flex;
+  }
+
+  .navbar {
+    display: none;
+  }
+
+  .cuerpo {
+    width: 95%;
+  }
+  
+  .profile_photo {
+    width: 180px;
+    height: 250px;
+    top: 220px;
+    left: 70%;
+  }
+
+  .logo-nombre {
+    top: 120px;
+  }
+
+  .descripcion {
+    top: 295px;
+  }
+
+  .dialogo {
+    text-align: center;
+    top: 150px;
+  }
+
+  .saludo,
+  .descripcion {
+    font-size: 26px;
+    width: 140%;
+  }
+
+  .github, .ig, .linkedin {
+    top: 100px;
+    width: 40px;
+    height: 40px;
+  }
+
   .dialogo::before{
-    top: 50px;
-    left: 150px;
+    top: 70px;
     border-top: 20px solid rgb(255, 255, 255);
     border-bottom: 20px solid transparent;
     border-left: 20px solid transparent;
     border-right: 20px solid transparent;
   }
 
+@media screen and (max-width: 380px) {
 
-  .logo-cont{
-    left: 19px;
+  .saludo, .descripcion {
+    font-size: 20px;
   }
 
-  .carrera {
-    width: 100%;
-    left: -4px;
-    top: -18px;
+  .logo-nombre{
+    font-size: 50px;
+    line-height: 56px;
+  }
+
+  .descripcion {
+    top: 268px;
+    line-height: 33px;
+  }
+
+  .github, .ig, .linkedin {
+    top: 90px;
+    width: 30px;
+    height: 30px;
+  }
+
+  .dialogo {
+    width: 290px;
+    height: 59px;
+    top: 130px;
+  }
+
+  .profile_photo {
+    top: 190px;
+  }
+
+  #carrera {
     font-size: 24px;
-    line-height: 42.14px;
-    text-align: center;
   }
 
-  .profile_photo{
-    width: 40%;
-    left: 136px;
-    top: 579px;
+  .dialogo::before {
+    top: 50px;
+    left: 129px;
   }
 
-  .github{
-    width: 30px;
-    height: 30px;
-    left: 159px;
-    top: 482px;
-  }
-  
-  .ig{
-    position: absolute;
-    width: 30px;
-    height: 30px;
-    left: 219px;
-    top: 482px;
-  }
-  
-  .linkedin{
-    position: absolute;
-    width: 30px;
-    height: 30px;
-    left: 279px;
-    top: 482px;
-  }
 }
