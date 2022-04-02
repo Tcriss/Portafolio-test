@@ -89,13 +89,14 @@ header{
   position: fixed;
   overflow: auto;
   width: 100%;
-  height: 10%;
+  height: 8%;
   top: 0;
 }
 
 .navbar{
+  box-sizing: border-box;
   position: relative;
-  width: 70%;
+  width: 56%;
   height: 100%;
   top: 0px;
 }
@@ -132,21 +133,6 @@ header{
   height: 24px;
 }
 
-.navbar a { 
-  display: inline-block;
-  font-family: raleway;
-  color: rgb(184, 184, 184);
-  transition: color 1s;
-  text-decoration: none;
-  text-align: center;
-  line-height: 50px;
-}
-
-.navbar a:hover{
-  color: rgb(255, 255, 255);
-  transition: all 1s;
-  }
-
 .active{
   color: white;
 }
@@ -164,15 +150,18 @@ header{
 }
 
 .navbar ul {
+  margin: 0;
+  padding: 0;
   list-style-type: none;
   background-color: #ffb50a00;
   overflow: hidden;
+  float: right;
 }
 
 .navbar li {
-  float: right;
-  padding-left: 20px;
-  padding-right: 20px;
+  float: left;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .dropdown-menu ul{
@@ -184,6 +173,22 @@ header{
   list-style-type: none;
   background-color: #0048ff00;
 }
+
+.navbar a { 
+  display: inline-block;
+  font-family: raleway;
+  color: rgb(184, 184, 184);
+  padding: 10px;
+  transition: color 1s;
+  text-decoration: none;
+  text-align: center;
+  line-height: 50px;
+}
+
+.navbar a:hover{
+  color: rgb(255, 255, 255);
+  transition: all 1s;
+  }
 
 .dropdown-menu li {
   float: center;
